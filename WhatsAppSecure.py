@@ -1,6 +1,5 @@
 import os
 import time
-import getpass
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -8,8 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-
-
+from selenium.webdriver.chrome.service import Service
 
 class WhatsAppSecure:
 
@@ -17,9 +15,17 @@ class WhatsAppSecure:
     def __init__(self):
         self.class_name = "WhatsAppSecure"
         self.local_appdata_path = os.getenv('LOCALAPPDATA')
+        # Specify the path to the ChromeDriver executable
+        self.chrome_driver_path = os.getcwd() + '/chromedriver/chromedriver.exe'
+        # Create a Service object using the ChromeDriver executable path
+        self.service = Service(self.chrome_driver_path)
         # Set cookies
         self.options = webdriver.ChromeOptions()
-        self.driver = webdriver.Chrome('/chromedriver/chromedriver.exe', chrome_options=self.options)
+        # Create the WebDriver instance by passing the Service object and options
+        self.driver = webdriver.Chrome(service=self.service, options=self.options)
+
+
+
         # Receiver of message
         self.target = None
         # Message to send
