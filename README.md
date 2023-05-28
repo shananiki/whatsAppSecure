@@ -7,11 +7,13 @@ Table of contents
 =================
 
 <!--ts-->
-   * [Preparation](#Preparation)
+   * [Preparation](#preparation)
       * [Chromium](#chromium)   
       * [Chrome Profiles](#chrome-profiles)   
       * [Python](#python-3104)   
       * [Required PIP packages](#required-pip-packages)
+   * [Use cases](#use-cases)
+     * [Example 1](#simple-example-1)
 <!--te-->
 
 
@@ -25,8 +27,10 @@ You can download chromium webdriver for your Google Chrome version by [here](htt
 
 Chrome Profiles
 ---------------
-Make sure you have a profile, one is created by default.
-![](https://github.com/shananiki/whatsAppSecure/chrome_profile.gif)
+Make sure you have a profile, one is created by default. My profile name is shananiki.\
+The path to the profile will most likely be "C:\Users\$USER\AppData\Local\Google\Chrome\User Data\Default" if it is your first profile.\
+![](https://github.com/shananiki/whatsAppSecure/blob/main/gifs/chrome_profile.gif?raw=true)
+
 
 Python 3.10.4
 -------------
@@ -42,32 +46,28 @@ selenium==4.9.1
 pip install -r requirements.txt
 ```
 
+Use cases
+=========
+In the following I am showing examples on what you can do with this piece of "art".
 
+Example 1
+---------
+This is basic message sending. And has nothing to do with securing the chat.\
+Sending x amount of messages to a person by giving it's name. First we create an instance of WhatsAppSecure class.
 
-
-2314
-231
-4
-234
-
-1234
-1
-234
-123
-4
-123
-4
-123
-4
-123
-4
-234
-123
-4
-23
-4
-2314
-
-234
-23
-4
+The set functions work as following:\
+**setTarget** - Sets the name of the target you want to send a message to.\
+**setMessage** - Sets the content of the message.\
+**setMessageCounter** - Sets the amount of messages to be sent.\
+---
+Other functions explained:\
+**openWhatsApp** - Will navigate to https://web.whatsapp.com. \
+**sendMessage** - Will send the message set before to the target person for the counter set.
+```python
+was = WhatsAppSecure()
+was.setTarget("Phil Gassen Neu")
+was.setMessage("Bot Test")
+was.setMessageCounter(2)
+was.openWhatsApp()
+was.sendMessage()
+```
