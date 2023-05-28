@@ -10,7 +10,7 @@ Table of contents
    * [Preparation](#Preparation)
       * [Chromium](#chromium)   
       * [Python](#python-3104)   
-      * [Required PIP packages](#Required-PIP-packages)
+      * [Required PIP packages](#required-pip-packages)
    * [Documentation](#Documentation)
       * [LMouse](#LMouse)
       * [Core](#Core)
