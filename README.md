@@ -9,6 +9,7 @@ Table of contents
 <!--ts-->
    * [Preparation](#Preparation)
       * [Chromium](#chromium)   
+      * [Chrome Profiles](#chrome-profiles)   
       * [Python](#python-3104)   
       * [Required PIP packages](#required-pip-packages)
 <!--te-->
@@ -21,6 +22,11 @@ Preparation
 Chromium
 --------
 You can download chromium webdriver for your Google Chrome version by [here](https://chromedriver.chromium.org/).
+
+Chrome Profiles
+---------------
+Make sure you have a profile, one is created by default.
+![](https://github.com/shananiki/whatsAppSecure/chrome_profile.gif)
 
 Python 3.10.4
 -------------
