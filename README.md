@@ -8,7 +8,8 @@ Table of contents
 
 <!--ts-->
    * [Preparation](#Preparation)
-      * [Python](#Python-3.10)   
+      * [Chromium](#chromium)   
+      * [Python](#python-3.10.4)   
       * [Required PIP packages](#Required-PIP-packages)
       * [Required packages on Linux](#Required-packages-on-Linux)
    * [Documentation](#Documentation)
@@ -24,14 +25,17 @@ Preparation
 ------------------------
 
 
-Download Chromium Webdriver
 
-You can download chromium webdriver for your chrome version by [here](https://chromedriver.chromium.org/).
+
+Python 3.10.4
+-----------
+
+
+Chromium
+--------
+You can download chromium webdriver for your Google Chrome version by [here](https://chromedriver.chromium.org/).
 
 ------------------
-
-Python 310
------------
 
 ------------------
 ### PIP Requirements 
