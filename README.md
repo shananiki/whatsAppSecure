@@ -11,11 +11,6 @@ Table of contents
       * [Chromium](#chromium)   
       * [Python](#python-3104)   
       * [Required PIP packages](#required-pip-packages)
-   * [Documentation](#Documentation)
-      * [LMouse](#LMouse)
-      * [Core](#Core)
-      * [Tab](#Tab)
-      * [FastLogin](#FastLogin)
 <!--te-->
 
 
