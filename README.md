@@ -11,7 +11,6 @@ Table of contents
       * [Chromium](#chromium)   
       * [Python](#python-3104)   
       * [Required PIP packages](#Required-PIP-packages)
-      * [Required packages on Linux](#Required-packages-on-Linux)
    * [Documentation](#Documentation)
       * [LMouse](#LMouse)
       * [Core](#Core)
@@ -22,36 +21,23 @@ Table of contents
 
 Preparation
 ===========
-------------------------
-
-
-
-
-Python 3.10.4
--------------
-
+-----------
 
 Chromium
 --------
 You can download chromium webdriver for your Google Chrome version by [here](https://chromedriver.chromium.org/).
 
-------------------
+Python 3.10.4
+-------------
+I used python 3.10.4, so I don't know if other versions are compatible. Download [here](https://www.python.org/downloads/release/python-3104/).
 
-------------------
-### PIP Requirements 
-
+Required PIP packages
+---------------------
+You can either install it with pip manually or use the requirements.txt !
 ```bash
-pip install selenium
+selenium==4.9.1
 ```
-or
 ```bash
 pip install -r requirements.txt
 ```
 
--------------------
-
-To load your default profile (including cookies) you can use the following function
-```python
-ChromeOptions options = new ChromeOptions();
-options.addArguments("user-data-dir=/path/to/your/custom/profile");
-```
