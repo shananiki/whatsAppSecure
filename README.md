@@ -30,7 +30,7 @@ You can download chromium webdriver for your chrome version by [here](https://ch
 
 ------------------
 
-Python 3.10
+Python 310
 -----------
 
 ------------------
