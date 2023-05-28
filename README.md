@@ -9,7 +9,7 @@ Table of contents
 <!--ts-->
    * [Preparation](#Preparation)
       * [Chromium](#chromium)   
-      * [Python](#python-3.10.4)   
+      * [Python](#python-3104)   
       * [Required PIP packages](#Required-PIP-packages)
       * [Required packages on Linux](#Required-packages-on-Linux)
    * [Documentation](#Documentation)
