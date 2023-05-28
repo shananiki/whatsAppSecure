@@ -1,17 +1,17 @@
 import os
 import time
+import signal
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
+
 class WhatsAppSecure:
-
-
     def __init__(self):
         self.class_name = "WhatsAppSecure"
         self.local_appdata_path = os.getenv('LOCALAPPDATA')
@@ -21,10 +21,9 @@ class WhatsAppSecure:
         self.service = Service(self.chrome_driver_path)
         # Set cookies
         self.options = webdriver.ChromeOptions()
+        self.loadProfile()
         # Create the WebDriver instance by passing the Service object and options
         self.driver = webdriver.Chrome(service=self.service, options=self.options)
-
-
 
         # Receiver of message
         self.target = None
@@ -35,15 +34,13 @@ class WhatsAppSecure:
 
         self.wait = None
 
-
-
     # This will return "C:\Users\§USER\AppData\Local\"
     def getLocalAppDataPath(self) -> str:
         return self.local_appdata_path
 
     # This will append your users profile to the driver so you will have all your cookies etc.
     def loadProfile(self) -> None:
-        self.options.add_argument("user-data-dir=" + was.getLocalAppDataPath() + "/Google/Chrome/User Data")
+        self.options.add_argument("user-data-dir=" + self.getLocalAppDataPath() + "/Google/Chrome/User Data")
 
     # This will return the name given in "C:\Users\$USER" of current logged in user. $USER will be replaced by your profile folder name!
     def getProfileFolder(self) -> str:
@@ -78,14 +75,20 @@ class WhatsAppSecure:
         contact.click()
         message_box_path = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]'
         message_box = self.wait.until(EC.presence_of_element_located((By.XPATH, message_box_path)))
-        for x in range(self.number_of_times):
+        for x in range(self.messageCounter):
             message_box.send_keys(self.message + Keys.ENTER)
             time.sleep(0.2)
 
+
 if __name__ == '__main__':
     was = WhatsAppSecure()
-    was.setTarget("Phil Gassen Neu")
-    was.setMessage("Bot Test")
+    # Target has to be in double quotes!
+    was.setTarget('"Phil Gassen Neu"')
+    was.setMessage("Omg es hat funktioniert hehe!!")
     was.setMessageCounter(2)
     was.openWhatsApp()
     was.sendMessage()
+
+    # Wait for script to be closed
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    signal.pause()

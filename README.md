@@ -56,16 +56,18 @@ This is basic message sending. And has nothing to do with securing the chat.\
 Sending x amount of messages to a person by giving it's name. First we create an instance of WhatsAppSecure class.
 
 The set functions work as following:\
-**setTarget** - Sets the name of the target you want to send a message to.\
+**setTarget** - Sets the name of the target you want to send a message to. Make sure to pass the target is double quotes '"name"'\
 **setMessage** - Sets the content of the message.\
-**setMessageCounter** - Sets the amount of messages to be sent.\
+**setMessageCounter** - Sets the amount of messages to be sent.
 ---
 Other functions explained:\
+**loadProfile** - Uses your profile and cookies of your real Google Chrome.\
 **openWhatsApp** - Will navigate to https://web.whatsapp.com. \
 **sendMessage** - Will send the message set before to the target person for the counter set.
 ```python
 was = WhatsAppSecure()
-was.setTarget("Phil Gassen Neu")
+was.loadProfile()
+was.setTarget('"Phil Gassen Neu"')
 was.setMessage("Bot Test")
 was.setMessageCounter(2)
 was.openWhatsApp()
